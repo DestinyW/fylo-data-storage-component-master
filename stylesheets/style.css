@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+:root {
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+  --Gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../images/bg-mobile.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+/*
+=====================================
+  * mobile first design 
+=====================================
+*/
+
+.wrapper {
+  width: 330px;
+  margin: 100px auto;
+}
+
+@media only screen and (max-width: 345px) {
+  .wrapper {
+    width: 90vw;
+  }
+}
+
+.box1, .box2, .box3,
+.icons img,
+.progress-bar .border, 
+.progress-bar .gradient {
+  border-radius: 10px;
+}
+
+.box1, 
+.box2 {
+  background-color: var(--Dark-Blue);
+  width: 100%;
+}
+
+.box1 {
+  border-top-right-radius: 45%;
+  margin-bottom: 18px;
+  padding: 40px 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.logo {
+  width: 144px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.icons img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16px;
+  background-color: var(--Very-Dark-Blue);
+  padding: 15px;
+}
+
+.icons .folder {
+  padding: 17px 13px;
+}
+
+.icons .upload {
+  padding: 19px 13px;
+}
+
+.icons img:last-child {
+  margin-right: 0;
+}
+
+.box2 {
+  padding: 30px 30px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--Pale-Blue);
+}
+
+.box2 p span,
+.box3 p,
+.box2 .stats {
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 260px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.progress-bar .border {
+  width: 100%;
+  height: 20px;
+  background-color: var(--Very-Dark-Blue);
+  margin-bottom: 13px;
+  position: relative;
+}
+.progress-bar .gradient {
+  width: 75%;
+  height: 14px;
+  background-image: var(--Gradient);
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  z-index: 1;
+}
+
+.progress-bar .circle {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  right: 2.5px;
+  z-index: 2;
+}
+
+.progress-bar .min {
+  float: left;
+}
+
+.progress-bar .max {
+  float: right;
+}
+
+.box3 {
+  clear: both;
+  width: 185px;
+  height: 75px;
+  background-color: #fff;
+  color: var(--Grayish-Blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 65px;
+  left: 33px;
+  z-index: 3;
+}
+
+.box3 p:first-child {
+  font-size: 34px;
+  color: var(--Very-Dark-Blue);
+  margin-right: 12px;
+}
+
+.pointer {
+  display: none;
+}
+
+/* 
+=====================================
+  * tablet & desktop version
+=====================================
+ */
+
+@media only screen and (min-width: 768px) {
+  body {
+    min-height: auto;
+  }
+
+  .wrapper {
+    width: 690px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 200px;
+  }
+
+  .box1 {
+    width: 290px;
+    margin: 0;
+  }
+
+  .box2 {
+    width: 370px;
+    height: 155px;
+    padding: 40px 0 35px 35px;
+    align-items: flex-start;
+  }
+
+  .progress-bar {
+    width: 90%;
+  }
+
+  .box3 {
+    top: 60px;
+    left: 50px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: var(--Very-Dark-Blue);
+    background-image: url('../images/bg-desktop.png');
+    background-position-y: 340px;
+  }
+
+  .wrapper {
+    width: 870px;
+  }
+
+  .box1 {
+    width: 310px;
+    margin: 0;
+  }
+
+  .box2 {
+    width: 510px;
+    padding: 40px 35px 35px;
+    align-items: flex-start;
+  }
+
+  .progress-bar {
+    width: 430px;
+  }
+
+  .box3 {
+    top: -125px;
+    left: 243px;
+    border-bottom-right-radius: 0;
+  }
+
+  .pointer {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    border-width: 0px 30px 30px 0;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    z-index: 4;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 900px;
+  }
+
+  .box1 {
+    width: 330px;
+  }
+
+  .box2 {
+    width: 530px;
+  }
+
+  .progress-bar {
+    width: 450px;
+  }
+
+  .box3 {
+    left: 263px;
+  }
+}
